@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cubo Semántico VR</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <aside id="panel">
+      <h1>Cubo Semántico</h1>
+      <p class="sub">Cada punto es una opinión. Las opiniones parecidas en significado quedan cerca.</p>
+
+      <form id="form-visita" autocomplete="off">
+        <label for="deporte">Tu deporte favorito</label>
+        <select id="deporte" required></select>
+        <input id="deporte-otro" type="text" maxlength="40" placeholder="¿Cuál?" hidden />
+
+        <div id="preguntas"></div>
+
+        <button type="submit" id="btn-enviar">Ubicar mis opiniones</button>
+        <p id="estado" role="status"></p>
+      </form>
+
+      <div id="leyenda">
+        <span><i class="forma circulo"></i>Pregunta 1</span>
+        <span><i class="forma cuadrado"></i>Pregunta 2</span>
+        <span><i class="forma rombo"></i>Pregunta 3</span>
+      </div>
+      <p class="contador"><strong id="total">0</strong> opiniones en el cubo</p>
+    </aside>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+[
+  {"deporte": "Fútbol", "pregunta_id": 1, "texto": "Nada se compara con el silencio de un estadio justo antes de un penal decisivo; esa tensión es lo que más amo del fútbol."},
+  {"deporte": "Fútbol", "pregunta_id": 1, "texto": "Lo que me engancha del fútbol es ver a once personas leerse sin hablar, como si compartieran un mismo pensamiento."},
+  {"deporte": "Fútbol", "pregunta_id": 2, "texto": "El tiempo de reposición debería sumarse de verdad al reloj; se pierde disciplina de juego cuando no se respeta."},
+  {"deporte": "Fútbol", "pregunta_id": 2, "texto": "Las peleas por decisiones arbitrales sobran; ahí hace falta más estrategia para resolver un partido con cabeza fría, no reclamos."},
+  {"deporte": "Fútbol", "pregunta_id": 3, "texto": "Un domingo en la tarde, un gol puede hacer que extraños se abracen en la calle; eso ya demuestra que sirve para algo."},
+  {"deporte": "Fútbol", "pregunta_id": 3, "texto": "Detrás de cada jugada hay horas de estrategia y lectura del rival que la pantalla nunca alcanza a mostrar."},
+
+  {"deporte": "Baloncesto", "pregunta_id": 1, "texto": "Ver a cinco jugadores moverse como una sola idea, sin gritar instrucciones, es la parte que más disfruto del baloncesto."},
+  {"deporte": "Baloncesto", "pregunta_id": 1, "texto": "Entrenar tiros libres miles de veces solo para tener un segundo de precisión en un partido real; esa disciplina silenciosa es lo que más admiro."},
+  {"deporte": "Baloncesto", "pregunta_id": 2, "texto": "La duración de los cuartos debería ajustarse para que el cansancio no le gane a la estrategia en los últimos minutos."},
+  {"deporte": "Baloncesto", "pregunta_id": 2, "texto": "Las faltas técnicas deberían ser más estrictas; hace falta más compañerismo y menos protesta individual en la cancha."},
+  {"deporte": "Baloncesto", "pregunta_id": 3, "texto": "Cinco personas confiando ciegamente unas en otras en cada jugada ya es motivo suficiente para respetar este deporte."},
+  {"deporte": "Baloncesto", "pregunta_id": 3, "texto": "En cada tiempo fuera de un partido cerrado hay más estrategia de la que cualquiera imagina desde la grada."},
+
+  {"deporte": "Voleibol", "pregunta_id": 1, "texto": "Recibir un balón a más de cien kilómetros por hora y mantener la calma para armar la jugada es pura adrenalina controlada."},
+  {"deporte": "Voleibol", "pregunta_id": 1, "texto": "Me apasiona que un solo error de comunicación pueda costar el punto; ahí se nota cuánto depende todo de confiar en el otro."},
+  {"deporte": "Voleibol", "pregunta_id": 2, "texto": "El sistema de rotación debería premiar más la estrategia de equipo que la posición individual de cada jugador."},
+  {"deporte": "Voleibol", "pregunta_id": 2, "texto": "En los sets largos debería haber un descanso extra obligatorio; el esfuerzo físico y mental constante ahí se subestima."},
+  {"deporte": "Voleibol", "pregunta_id": 3, "texto": "Sin trabajo en equipo real este deporte simplemente no funciona; es de los pocos donde nadie puede cargar solo el partido."},
+  {"deporte": "Voleibol", "pregunta_id": 3, "texto": "Una jugada de tres toques perfecta es pura estrategia ejecutada en menos de dos segundos."},
+
+  {"deporte": "Natación", "pregunta_id": 1, "texto": "Meterme al agua fría de madrugada, todos los días, sin que nadie me esté mirando, es la disciplina que más me define."},
+  {"deporte": "Natación", "pregunta_id": 1, "texto": "Compito contra el reloj, sola, año tras año, por mejorar unas décimas; esa constancia es lo que más amo de nadar."},
+  {"deporte": "Natación", "pregunta_id": 2, "texto": "La forma en que se transmite debería mostrar más la estrategia de ritmo y respiración, no solo quién llega primero."},
+  {"deporte": "Natación", "pregunta_id": 2, "texto": "Debería reconocerse más el esfuerzo individual constante y no solo el podio; el proceso vale tanto como el resultado."},
+  {"deporte": "Natación", "pregunta_id": 3, "texto": "Competir contra uno mismo, sin excusas ni compañeros que ayuden, también es una forma de pasión por mejorar."},
+  {"deporte": "Natación", "pregunta_id": 3, "texto": "Nadie aplaude un entrenamiento a las cinco de la mañana, y aun así ahí está la disciplina real de este deporte."},
+
+  {"deporte": "Atletismo", "pregunta_id": 1, "texto": "No hay nada que esconder en una pista: es puro esfuerzo, sin estrategias de equipo que disimulen un mal día, y eso me apasiona."},
+  {"deporte": "Atletismo", "pregunta_id": 1, "texto": "Entrenar años por mejorar un segundo en una carrera que dura minutos es una forma de disciplina que pocos entienden."},
+  {"deporte": "Atletismo", "pregunta_id": 2, "texto": "Las pruebas menos populares deberían premiarse más; hay muchísima constancia detrás de disciplinas que casi nadie transmite."},
+  {"deporte": "Atletismo", "pregunta_id": 2, "texto": "Debería explicarse más la estrategia de ritmo en las carreras largas; no es solo correr rápido, es administrar el esfuerzo."},
+  {"deporte": "Atletismo", "pregunta_id": 3, "texto": "La próxima vez que corras para alcanzar un bus, multiplica eso por horas de entrenamiento; así vivimos los que corremos en serio."},
+  {"deporte": "Atletismo", "pregunta_id": 3, "texto": "Un deporte que mide el límite exacto del cuerpo humano, sin trucos, merece más respeto del que le dan."},
+
+  {"deporte": "Ciclismo", "pregunta_id": 1, "texto": "Subir una montaña en bicicleta durante horas, con el cuerpo al límite, es la disciplina que más me apasiona de este deporte."},
+  {"deporte": "Ciclismo", "pregunta_id": 1, "texto": "Detrás de un ciclista que gana hay un equipo entero sacrificándose en silencio para protegerlo del viento, y eso es lo que más valoro."},
+  {"deporte": "Ciclismo", "pregunta_id": 2, "texto": "Las etapas de montaña deberían explicarse mejor en la transmisión; ahí se decide toda la estrategia real de la carrera."},
+  {"deporte": "Ciclismo", "pregunta_id": 2, "texto": "Los ciclistas de apoyo deberían reconocerse más; su disciplina sostiene a todo el equipo sin llevarse ningún podio."},
+  {"deporte": "Ciclismo", "pregunta_id": 3, "texto": "Este deporte es pura estrategia de equipo disfrazada de esfuerzo individual."},
+  {"deporte": "Ciclismo", "pregunta_id": 3, "texto": "Combina un esfuerzo físico enorme con una estrategia de equipo que casi nadie explica bien en televisión, y eso ya lo hace grande."},
+
+  {"deporte": "Tenis", "pregunta_id": 1, "texto": "Jugar solo contra otra persona, sin nadie más a quien culpar, exige una fortaleza mental que me apasiona por completo."},
+  {"deporte": "Tenis", "pregunta_id": 1, "texto": "Entrenar la misma jugada miles de veces hasta que el cuerpo la haga sin pensar; esa disciplina es lo que más admiro del tenis."},
+  {"deporte": "Tenis", "pregunta_id": 2, "texto": "El sistema de puntuación en los desempates debería dar más margen para que la estrategia del jugador se note, no solo los nervios."},
+  {"deporte": "Tenis", "pregunta_id": 2, "texto": "Deberían ser más visibles los tiempos entre puntos; ahí se ve toda la disciplina mental de mantener la concentración por horas."},
+  {"deporte": "Tenis", "pregunta_id": 3, "texto": "Cada golpe en el tenis es una decisión de estrategia calculada en fracciones de segundo."},
+  {"deporte": "Tenis", "pregunta_id": 3, "texto": "Es tan mental como físico; una mala decisión de estrategia en un punto clave puede costar todo el partido."},
+
+  {"deporte": "Gimnasia", "pregunta_id": 1, "texto": "Lograr segundos de perfección en una rutina después de años de disciplina extrema es lo que más me apasiona de la gimnasia."},
+  {"deporte": "Gimnasia", "pregunta_id": 1, "texto": "Lo que parece fácil en una rutina es, en realidad, técnica entrenada miles de veces hasta que el cuerpo la domina."},
+  {"deporte": "Gimnasia", "pregunta_id": 2, "texto": "Debería explicarse mejor cómo se arman los puntajes; se pierde toda la estrategia de combinar dificultad y precisión."},
+  {"deporte": "Gimnasia", "pregunta_id": 2, "texto": "Deberían transmitirse más los entrenamientos y no solo la competencia; ahí se entiende la disciplina real detrás del deporte."},
+  {"deporte": "Gimnasia", "pregunta_id": 3, "texto": "Una rutina de treinta segundos esconde años de disciplina que nadie ve desde las gradas."},
+  {"deporte": "Gimnasia", "pregunta_id": 3, "texto": "Un deporte que exige tanta precisión y control del cuerpo es pura técnica, no solo espectáculo."}
+]

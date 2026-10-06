@@ -1,0 +1,8 @@
+streamlit>=1.36
+sentence-transformers
+scikit-learn
+plotly
+pandas
+numpy
+fastapi
+uvicorn[standard]

@@ -1,0 +1,434 @@
+[
+  {
+    "deporte": "Fútbol",
+    "pregunta_id": 1,
+    "texto": "Nada se compara con el silencio de un estadio justo antes de un penal decisivo; esa tensión es lo que más amo del fútbol.",
+    "cluster_id": 4,
+    "x": -7.039450418862682,
+    "y": 5.171868549722351,
+    "z": -8.26620132943024
+  },
+  {
+    "deporte": "Fútbol",
+    "pregunta_id": 1,
+    "texto": "Lo que me engancha del fútbol es ver a once personas leerse sin hablar, como si compartieran un mismo pensamiento.",
+    "cluster_id": 4,
+    "x": -6.936257784186608,
+    "y": 6.751113491877708,
+    "z": -11.83396513579674
+  },
+  {
+    "deporte": "Fútbol",
+    "pregunta_id": 2,
+    "texto": "El tiempo de reposición debería sumarse de verdad al reloj; se pierde disciplina de juego cuando no se respeta.",
+    "cluster_id": 3,
+    "x": 8.313584072613969,
+    "y": -0.0667663746099082,
+    "z": -7.093427964811489
+  },
+  {
+    "deporte": "Fútbol",
+    "pregunta_id": 2,
+    "texto": "Las peleas por decisiones arbitrales sobran; ahí hace falta más estrategia para resolver un partido con cabeza fría, no reclamos.",
+    "cluster_id": 2,
+    "x": 5.666864032098432,
+    "y": 10.843567872827567,
+    "z": 4.6200120123381545
+  },
+  {
+    "deporte": "Fútbol",
+    "pregunta_id": 3,
+    "texto": "Un domingo en la tarde, un gol puede hacer que extraños se abracen en la calle; eso ya demuestra que sirve para algo.",
+    "cluster_id": 4,
+    "x": -1.7409735832900421,
+    "y": 3.8649611967626165,
+    "z": -6.23344452593956
+  },
+  {
+    "deporte": "Fútbol",
+    "pregunta_id": 3,
+    "texto": "Detrás de cada jugada hay horas de estrategia y lectura del rival que la pantalla nunca alcanza a mostrar.",
+    "cluster_id": 4,
+    "x": 3.032432907631556,
+    "y": 4.8991045862644835,
+    "z": -7.109278669827576
+  },
+  {
+    "deporte": "Baloncesto",
+    "pregunta_id": 1,
+    "texto": "Ver a cinco jugadores moverse como una sola idea, sin gritar instrucciones, es la parte que más disfruto del baloncesto.",
+    "cluster_id": 4,
+    "x": -8.440966216743481,
+    "y": 2.0434146518340506,
+    "z": -4.012125837624281
+  },
+  {
+    "deporte": "Baloncesto",
+    "pregunta_id": 1,
+    "texto": "Entrenar tiros libres miles de veces solo para tener un segundo de precisión en un partido real; esa disciplina silenciosa es lo que más admiro.",
+    "cluster_id": 0,
+    "x": -0.8874846585350072,
+    "y": 0.39873451543801713,
+    "z": -1.5678035884945698
+  },
+  {
+    "deporte": "Baloncesto",
+    "pregunta_id": 2,
+    "texto": "La duración de los cuartos debería ajustarse para que el cansancio no le gane a la estrategia en los últimos minutos.",
+    "cluster_id": 3,
+    "x": 12.10510055075351,
+    "y": 2.1831709624753546,
+    "z": -7.661704498629154
+  },
+  {
+    "deporte": "Baloncesto",
+    "pregunta_id": 2,
+    "texto": "Las faltas técnicas deberían ser más estrictas; hace falta más compañerismo y menos protesta individual en la cancha.",
+    "cluster_id": 2,
+    "x": 8.118829803051966,
+    "y": 8.884808999374007,
+    "z": 1.2698641953880874
+  },
+  {
+    "deporte": "Baloncesto",
+    "pregunta_id": 3,
+    "texto": "Cinco personas confiando ciegamente unas en otras en cada jugada ya es motivo suficiente para respetar este deporte.",
+    "cluster_id": 4,
+    "x": -11.013407565509267,
+    "y": 4.74414815545058,
+    "z": -4.603613611544903
+  },
+  {
+    "deporte": "Baloncesto",
+    "pregunta_id": 3,
+    "texto": "En cada tiempo fuera de un partido cerrado hay más estrategia de la que cualquiera imagina desde la grada.",
+    "cluster_id": 2,
+    "x": 4.094879401290764,
+    "y": 6.700794678899415,
+    "z": 3.748392536471145
+  },
+  {
+    "deporte": "Voleibol",
+    "pregunta_id": 1,
+    "texto": "Recibir un balón a más de cien kilómetros por hora y mantener la calma para armar la jugada es pura adrenalina controlada.",
+    "cluster_id": 1,
+    "x": -4.105975025262401,
+    "y": -5.262096265687986,
+    "z": 0.34654558468584123
+  },
+  {
+    "deporte": "Voleibol",
+    "pregunta_id": 1,
+    "texto": "Me apasiona que un solo error de comunicación pueda costar el punto; ahí se nota cuánto depende todo de confiar en el otro.",
+    "cluster_id": 2,
+    "x": 2.3091337288383365,
+    "y": 9.69897682331792,
+    "z": -2.2935566169781847
+  },
+  {
+    "deporte": "Voleibol",
+    "pregunta_id": 2,
+    "texto": "El sistema de rotación debería premiar más la estrategia de equipo que la posición individual de cada jugador.",
+    "cluster_id": 1,
+    "x": -5.154610417909779,
+    "y": 3.2401507378887113,
+    "z": 6.010751947577185
+  },
+  {
+    "deporte": "Voleibol",
+    "pregunta_id": 2,
+    "texto": "En los sets largos debería haber un descanso extra obligatorio; el esfuerzo físico y mental constante ahí se subestima.",
+    "cluster_id": 3,
+    "x": 8.024025435742837,
+    "y": -0.19282492972769663,
+    "z": -4.156385490549152
+  },
+  {
+    "deporte": "Voleibol",
+    "pregunta_id": 3,
+    "texto": "Sin trabajo en equipo real este deporte simplemente no funciona; es de los pocos donde nadie puede cargar solo el partido.",
+    "cluster_id": 4,
+    "x": -8.334509389496219,
+    "y": 4.586045427592853,
+    "z": -2.7069600102670215
+  },
+  {
+    "deporte": "Voleibol",
+    "pregunta_id": 3,
+    "texto": "Una jugada de tres toques perfecta es pura estrategia ejecutada en menos de dos segundos.",
+    "cluster_id": 0,
+    "x": 1.2181392323336784,
+    "y": 0.7568971499508792,
+    "z": 0.4141404008816722
+  },
+  {
+    "deporte": "Natación",
+    "pregunta_id": 1,
+    "texto": "Meterme al agua fría de madrugada, todos los días, sin que nadie me esté mirando, es la disciplina que más me define.",
+    "cluster_id": 3,
+    "x": -1.676631943600902,
+    "y": -5.961569747502631,
+    "z": -5.451617736183773
+  },
+  {
+    "deporte": "Natación",
+    "pregunta_id": 1,
+    "texto": "Compito contra el reloj, sola, año tras año, por mejorar unas décimas; esa constancia es lo que más amo de nadar.",
+    "cluster_id": 3,
+    "x": 2.898869337673162,
+    "y": -7.866511825257617,
+    "z": -4.862927687123907
+  },
+  {
+    "deporte": "Natación",
+    "pregunta_id": 2,
+    "texto": "La forma en que se transmite debería mostrar más la estrategia de ritmo y respiración, no solo quién llega primero.",
+    "cluster_id": 0,
+    "x": 4.825497570226477,
+    "y": -2.7998301198622517,
+    "z": 5.142398794775997
+  },
+  {
+    "deporte": "Natación",
+    "pregunta_id": 2,
+    "texto": "Debería reconocerse más el esfuerzo individual constante y no solo el podio; el proceso vale tanto como el resultado.",
+    "cluster_id": 0,
+    "x": 4.963058637727303,
+    "y": -1.1298056161317829,
+    "z": 7.573742357373137
+  },
+  {
+    "deporte": "Natación",
+    "pregunta_id": 3,
+    "texto": "Competir contra uno mismo, sin excusas ni compañeros que ayuden, también es una forma de pasión por mejorar.",
+    "cluster_id": 0,
+    "x": -0.6303937944752638,
+    "y": 2.3090291883334335,
+    "z": 6.185840224326468
+  },
+  {
+    "deporte": "Natación",
+    "pregunta_id": 3,
+    "texto": "Nadie aplaude un entrenamiento a las cinco de la mañana, y aun así ahí está la disciplina real de este deporte.",
+    "cluster_id": 1,
+    "x": -4.968671035853365,
+    "y": -5.2637373782236345,
+    "z": -5.947002876970939
+  },
+  {
+    "deporte": "Atletismo",
+    "pregunta_id": 1,
+    "texto": "No hay nada que esconder en una pista: es puro esfuerzo, sin estrategias de equipo que disimulen un mal día, y eso me apasiona.",
+    "cluster_id": 1,
+    "x": -3.4766808744141424,
+    "y": 0.34897465240041625,
+    "z": 1.7050716154506462
+  },
+  {
+    "deporte": "Atletismo",
+    "pregunta_id": 1,
+    "texto": "Entrenar años por mejorar un segundo en una carrera que dura minutos es una forma de disciplina que pocos entienden.",
+    "cluster_id": 3,
+    "x": 6.029603145352086,
+    "y": -7.468224490608617,
+    "z": -4.0917053064371105
+  },
+  {
+    "deporte": "Atletismo",
+    "pregunta_id": 2,
+    "texto": "Las pruebas menos populares deberían premiarse más; hay muchísima constancia detrás de disciplinas que casi nadie transmite.",
+    "cluster_id": 2,
+    "x": 2.4587835314202913,
+    "y": 4.572499634864653,
+    "z": -1.2262044150860172
+  },
+  {
+    "deporte": "Atletismo",
+    "pregunta_id": 2,
+    "texto": "Debería explicarse más la estrategia de ritmo en las carreras largas; no es solo correr rápido, es administrar el esfuerzo.",
+    "cluster_id": 0,
+    "x": 6.451142007515297,
+    "y": -3.4106717684595154,
+    "z": 7.823969708995497
+  },
+  {
+    "deporte": "Atletismo",
+    "pregunta_id": 3,
+    "texto": "La próxima vez que corras para alcanzar un bus, multiplica eso por horas de entrenamiento; así vivimos los que corremos en serio.",
+    "cluster_id": 3,
+    "x": 5.145074903378286,
+    "y": -6.765055971451027,
+    "z": -0.35665102762626394
+  },
+  {
+    "deporte": "Atletismo",
+    "pregunta_id": 3,
+    "texto": "Un deporte que mide el límite exacto del cuerpo humano, sin trucos, merece más respeto del que le dan.",
+    "cluster_id": 1,
+    "x": -9.330569687251252,
+    "y": -2.6480595442126162,
+    "z": 1.1705033473221953
+  },
+  {
+    "deporte": "Ciclismo",
+    "pregunta_id": 1,
+    "texto": "Subir una montaña en bicicleta durante horas, con el cuerpo al límite, es la disciplina que más me apasiona de este deporte.",
+    "cluster_id": 1,
+    "x": -4.081445301751878,
+    "y": -10.759280481511519,
+    "z": 3.4849274936405457
+  },
+  {
+    "deporte": "Ciclismo",
+    "pregunta_id": 1,
+    "texto": "Detrás de un ciclista que gana hay un equipo entero sacrificándose en silencio para protegerlo del viento, y eso es lo que más valoro.",
+    "cluster_id": 1,
+    "x": -8.367710263686083,
+    "y": 1.209996508517477,
+    "z": 3.039483614222035
+  },
+  {
+    "deporte": "Ciclismo",
+    "pregunta_id": 2,
+    "texto": "Las etapas de montaña deberían explicarse mejor en la transmisión; ahí se decide toda la estrategia real de la carrera.",
+    "cluster_id": 0,
+    "x": 5.332690181394785,
+    "y": -1.4892608257884998,
+    "z": 11.607678970748891
+  },
+  {
+    "deporte": "Ciclismo",
+    "pregunta_id": 2,
+    "texto": "Los ciclistas de apoyo deberían reconocerse más; su disciplina sostiene a todo el equipo sin llevarse ningún podio.",
+    "cluster_id": 1,
+    "x": -7.442689172610499,
+    "y": -1.4076071498469007,
+    "z": 4.295134679064345
+  },
+  {
+    "deporte": "Ciclismo",
+    "pregunta_id": 3,
+    "texto": "Este deporte es pura estrategia de equipo disfrazada de esfuerzo individual.",
+    "cluster_id": 1,
+    "x": -9.825655672068036,
+    "y": 2.385226420365201,
+    "z": 3.6805544498330294
+  },
+  {
+    "deporte": "Ciclismo",
+    "pregunta_id": 3,
+    "texto": "Combina un esfuerzo físico enorme con una estrategia de equipo que casi nadie explica bien en televisión, y eso ya lo hace grande.",
+    "cluster_id": 0,
+    "x": -2.1484777820549987,
+    "y": 2.2884594565789618,
+    "z": 3.795256850935037
+  },
+  {
+    "deporte": "Tenis",
+    "pregunta_id": 1,
+    "texto": "Jugar solo contra otra persona, sin nadie más a quien culpar, exige una fortaleza mental que me apasiona por completo.",
+    "cluster_id": 1,
+    "x": -6.284084697295328,
+    "y": 1.6836451608545016,
+    "z": 1.7958496475092256
+  },
+  {
+    "deporte": "Tenis",
+    "pregunta_id": 1,
+    "texto": "Entrenar la misma jugada miles de veces hasta que el cuerpo la haga sin pensar; esa disciplina es lo que más admiro del tenis.",
+    "cluster_id": 1,
+    "x": -4.667803113088132,
+    "y": -8.269332625291396,
+    "z": -0.4034740013271086
+  },
+  {
+    "deporte": "Tenis",
+    "pregunta_id": 2,
+    "texto": "El sistema de puntuación en los desempates debería dar más margen para que la estrategia del jugador se note, no solo los nervios.",
+    "cluster_id": 0,
+    "x": 0.8122940945794237,
+    "y": 3.9896895686360527,
+    "z": 1.664469867378428
+  },
+  {
+    "deporte": "Tenis",
+    "pregunta_id": 2,
+    "texto": "Deberían ser más visibles los tiempos entre puntos; ahí se ve toda la disciplina mental de mantener la concentración por horas.",
+    "cluster_id": 3,
+    "x": 10.135474657985657,
+    "y": -3.676485779443095,
+    "z": -5.561656693832856
+  },
+  {
+    "deporte": "Tenis",
+    "pregunta_id": 3,
+    "texto": "Cada golpe en el tenis es una decisión de estrategia calculada en fracciones de segundo.",
+    "cluster_id": 0,
+    "x": 1.3369954403337856,
+    "y": 2.212448729912186,
+    "z": 4.19982069753233
+  },
+  {
+    "deporte": "Tenis",
+    "pregunta_id": 3,
+    "texto": "Es tan mental como físico; una mala decisión de estrategia en un punto clave puede costar todo el partido.",
+    "cluster_id": 2,
+    "x": 4.020562344817853,
+    "y": 9.756099992408021,
+    "z": 5.300003414858951
+  },
+  {
+    "deporte": "Gimnasia",
+    "pregunta_id": 1,
+    "texto": "Lograr segundos de perfección en una rutina después de años de disciplina extrema es lo que más me apasiona de la gimnasia.",
+    "cluster_id": 3,
+    "x": 2.9341162433116192,
+    "y": -9.773565488692839,
+    "z": -0.8280351428697843
+  },
+  {
+    "deporte": "Gimnasia",
+    "pregunta_id": 1,
+    "texto": "Lo que parece fácil en una rutina es, en realidad, técnica entrenada miles de veces hasta que el cuerpo la domina.",
+    "cluster_id": 3,
+    "x": 1.8802397708102194,
+    "y": -11.49186036004612,
+    "z": 1.898968364222716
+  },
+  {
+    "deporte": "Gimnasia",
+    "pregunta_id": 2,
+    "texto": "Debería explicarse mejor cómo se arman los puntajes; se pierde toda la estrategia de combinar dificultad y precisión.",
+    "cluster_id": 2,
+    "x": 6.211246291305021,
+    "y": 6.112027899894461,
+    "z": 4.9620511837129095
+  },
+  {
+    "deporte": "Gimnasia",
+    "pregunta_id": 2,
+    "texto": "Deberían transmitirse más los entrenamientos y no solo la competencia; ahí se entiende la disciplina real detrás del deporte.",
+    "cluster_id": 1,
+    "x": -2.085187682021451,
+    "y": -5.172830262206192,
+    "z": 4.616283247657471
+  },
+  {
+    "deporte": "Gimnasia",
+    "pregunta_id": 3,
+    "texto": "Una rutina de treinta segundos esconde años de disciplina que nadie ve desde las gradas.",
+    "cluster_id": 3,
+    "x": 6.592618854141636,
+    "y": -5.142901667193984,
+    "z": -8.64961556909439
+  },
+  {
+    "deporte": "Gimnasia",
+    "pregunta_id": 3,
+    "texto": "Un deporte que exige tanta precisión y control del cuerpo es pura técnica, no solo espectáculo.",
+    "cluster_id": 1,
+    "x": -6.271620096361164,
+    "y": -5.617576340686056,
+    "z": 4.565642529543081
+  }
+]

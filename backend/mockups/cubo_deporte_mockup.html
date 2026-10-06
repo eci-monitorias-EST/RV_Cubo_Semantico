@@ -1,0 +1,534 @@
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Cubo Semántico — ConexIA 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdfa0",
+                        "surface-container": "#f0edec",
+                        "on-primary-fixed-variant": "#003b6d",
+                        "surface": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-tertiary-container": "#f1efff",
+                        "secondary-container": "#fec330",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed-dim": "#bdc2ff",
+                        "primary": "#0d47a1",
+                        "surface-dim": "#dcd9d9",
+                        "surface-tint": "#1565c0",
+                        "outline": "#707a6c",
+                        "inverse-primary": "#64b5f6",
+                        "primary-fixed-dim": "#64b5f6",
+                        "tertiary-fixed": "#e0e0ff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e5e2e1",
+                        "tertiary": "#434ca5",
+                        "on-primary-fixed": "#001e36",
+                        "on-background": "#1c1b1b",
+                        "secondary": "#795900",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#261a00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "background": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "surface-variant": "#e5e2e1",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed-dim": "#f8bd2a",
+                        "outline-variant": "#bfcaba",
+                        "surface-container-high": "#ebe7e7",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#40493d",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#000767",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#1976d2",
+                        "on-tertiary-fixed-variant": "#343d96",
+                        "tertiary-container": "#5c65c0",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-container": "#6f5100",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#90caf9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "md": "24px",
+                        "margin-desktop": "32px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "xl": "64px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-bold": ["Montserrat"],
+                        "stats-number": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "stats-number": ["20px", { "lineHeight": "24px", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(252, 249, 248, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(25, 118, 210, 0.15);
+            box-shadow: 0 8px 32px rgba(13, 71, 161, 0.08);
+        }
+
+        .pitch-bg {
+            background-color: #f6f3f2;
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(25, 118, 210, 0.08) 0%, transparent 50%),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(25, 118, 210, 0.03) 50px,
+                    rgba(25, 118, 210, 0.03) 100px
+                );
+            background-attachment: fixed;
+        }
+
+        .soccer-pattern {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.4;
+            background-image:
+                linear-gradient(30deg, rgba(25, 118, 210, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(25, 118, 210, 0.03) 87.5%, rgba(25, 118, 210, 0.03)),
+                linear-gradient(150deg, rgba(25, 118, 210, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(25, 118, 210, 0.03) 87.5%, rgba(25, 118, 210, 0.03)),
+                linear-gradient(30deg, rgba(25, 118, 210, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(25, 118, 210, 0.03) 87.5%, rgba(25, 118, 210, 0.03)),
+                linear-gradient(150deg, rgba(25, 118, 210, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(25, 118, 210, 0.03) 87.5%, rgba(25, 118, 210, 0.03)),
+                linear-gradient(60deg, rgba(254, 195, 48, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(254, 195, 48, 0.03) 75%, rgba(254, 195, 48, 0.03)),
+                linear-gradient(60deg, rgba(254, 195, 48, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(254, 195, 48, 0.03) 75%, rgba(254, 195, 48, 0.03));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+
+        .progress-bar-fill {
+            transition: width 0.5s ease-in-out;
+            background: linear-gradient(90deg, #0d47a1, #64b5f6);
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in {
+            animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .premium-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .premium-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 0;
+            padding-bottom: 120%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.4s ease-out;
+        }
+        .premium-btn:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .title-glow {
+            text-shadow: 0 0 20px rgba(25, 118, 210, 0.2);
+        }
+
+        .sport-chip {
+            transition: all 0.2s ease;
+        }
+        .sport-chip[aria-pressed="true"] {
+            background: linear-gradient(135deg, #fec330, #f8bd2a);
+            color: #6f5100;
+            border-color: #fec330;
+            box-shadow: 0 4px 14px rgba(254, 195, 48, 0.4);
+            transform: scale(1.04);
+        }
+        .sport-chip[aria-pressed="true"] .material-symbols-outlined {
+            color: #6f5100;
+        }
+
+        #quiz-container.is-locked {
+            opacity: 0.4;
+            pointer-events: none;
+            filter: grayscale(0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface pitch-bg min-h-screen flex flex-col font-body-md relative">
+<div class="soccer-pattern"></div>
+<!-- TopAppBar -->
+<header class="bg-surface/90 backdrop-blur-sm dark:bg-surface-dim/90 fixed top-0 w-full z-50 border-b-2 border-secondary-container/50 flat no shadows">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 md:h-20 w-full max-w-[1200px] mx-auto">
+<div class="flex items-center gap-xs md:gap-sm">
+<span class="material-symbols-outlined text-primary-container font-bold text-3xl md:text-4xl" style="font-variation-settings: &quot;FILL&quot; 1;">sports_soccer</span>
+<div class="flex flex-col leading-none">
+<span class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg font-extrabold text-primary-container tracking-tight title-glow">DATA SPORT</span>
+<span class="font-label-bold text-[9px] md:text-[10px] text-secondary tracking-[0.2em] uppercase">ConexIA · IA en acción</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[100px] pb-[80px] px-margin-mobile md:px-margin-desktop w-full max-w-[1200px] mx-auto flex flex-col items-center">
+
+<!-- Sport Selector (NUEVO: va antes del cuestionario) -->
+<div class="w-full max-w-2xl glass-panel rounded-[24px] p-md md:p-xl relative z-10 mb-md" id="sport-selector">
+<h3 class="font-headline-md text-headline-md text-primary-container mb-xs font-bold tracking-tight">Antes de empezar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">¿Cuál es tu deporte favorito?</p>
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-sm" id="sport-grid">
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Fútbol">
+<span class="material-symbols-outlined text-2xl">sports_soccer</span>
+<span class="font-label-bold text-[11px]">Fútbol</span>
+</button>
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Baloncesto">
+<span class="material-symbols-outlined text-2xl">sports_basketball</span>
+<span class="font-label-bold text-[11px]">Baloncesto</span>
+</button>
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Voleibol">
+<span class="material-symbols-outlined text-2xl">sports_volleyball</span>
+<span class="font-label-bold text-[11px]">Voleibol</span>
+</button>
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Natación">
+<span class="material-symbols-outlined text-2xl">pool</span>
+<span class="font-label-bold text-[11px]">Natación</span>
+</button>
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Atletismo">
+<span class="material-symbols-outlined text-2xl">directions_run</span>
+<span class="font-label-bold text-[11px]">Atletismo</span>
+</button>
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Ciclismo">
+<span class="material-symbols-outlined text-2xl">directions_bike</span>
+<span class="font-label-bold text-[11px]">Ciclismo</span>
+</button>
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Tenis">
+<span class="material-symbols-outlined text-2xl">sports_tennis</span>
+<span class="font-label-bold text-[11px]">Tenis</span>
+</button>
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Gimnasia">
+<span class="material-symbols-outlined text-2xl">sports_gymnastics</span>
+<span class="font-label-bold text-[11px]">Gimnasia</span>
+</button>
+<button aria-pressed="false" class="sport-chip flex flex-col items-center justify-center gap-1 border-2 border-outline-variant/50 rounded-xl py-md px-xs bg-surface hover:bg-surface-container-low" data-sport="Otro">
+<span class="material-symbols-outlined text-2xl">more_horiz</span>
+<span class="font-label-bold text-[11px]">Otro</span>
+</button>
+</div>
+<div class="hidden mt-md" id="other-sport-wrap">
+<input class="w-full bg-surface border-2 border-outline-variant/50 p-sm rounded-xl font-body-md text-body-md focus:outline-none focus:border-primary-container focus:ring-4 focus:ring-primary-container/20" id="other-sport-input" maxlength="40" placeholder="Escribe tu deporte" type="text">
+</div>
+</div>
+
+<!-- Mensaje de bloqueo: vive FUERA de la tarjeta atenuada para que se lea bien -->
+<p class="w-full max-w-2xl text-center font-label-bold text-label-bold text-primary-container mb-md flex items-center justify-center gap-1" id="lock-hint">
+<span class="material-symbols-outlined text-lg">arrow_downward</span>
+                Elige tu deporte para continuar
+            </p>
+
+<!-- Quiz Container -->
+<div class="w-full max-w-2xl glass-panel rounded-[24px] p-md md:p-xl relative overflow-hidden z-10 is-locked" id="quiz-container">
+<!-- Progress Header -->
+<div class="mb-lg">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-bold text-label-bold text-secondary-container uppercase tracking-wider font-bold" id="progress-text">Pregunta <span id="current-q-num">1</span> de 3</span>
+<span class="material-symbols-outlined text-outline-variant">scatter_plot</span>
+</div>
+<div class="w-full bg-surface-container-highest h-3 rounded-full overflow-hidden shadow-inner">
+<div class="h-full progress-bar-fill rounded-full" id="progress-bar" style="width: 33%;"></div>
+</div>
+</div>
+<!-- Question Area -->
+<div class="slide-in" id="question-area">
+<h2 class="font-headline-lg text-headline-lg md:font-display-lg-mobile md:text-display-lg-mobile mb-sm text-on-surface font-extrabold leading-tight" id="question-text">¿Qué es lo que más te apasiona de tu deporte favorito?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Cuéntanos con tus palabras — no hay una respuesta correcta o incorrecta.</p>
+<div class="flex flex-col gap-md">
+<textarea class="w-full bg-surface border-2 border-outline-variant/50 p-md md:p-lg rounded-xl font-body-lg text-body-lg text-on-surface focus:outline-none focus:border-primary-container focus:ring-4 focus:ring-primary-container/20 transition-all shadow-sm resize-none" id="answer-input" placeholder="Escribe tu respuesta aquí..." rows="4"></textarea>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="mt-xl flex justify-between items-center w-full" id="nav-buttons-container">
+<button class="bg-surface text-primary-container border-2 border-primary-container font-label-bold text-label-bold px-md md:px-xl py-sm rounded-full hover:bg-surface-container-low transition-colors shadow-sm disabled:opacity-40 disabled:cursor-not-allowed uppercase tracking-wide" disabled="" id="btn-atras" onclick="prevQuestion()">
+                    Atrás
+                </button>
+<button class="bg-primary-container text-on-primary font-label-bold text-label-bold px-md md:px-xl py-sm rounded-full premium-btn shadow-md hover:shadow-lg uppercase tracking-wide" id="btn-siguiente" onclick="nextQuestionAction()">Siguiente</button>
+</div>
+</div>
+
+<!-- 3D Visualization Dashboard Section -->
+<div class="w-full mt-xl flex flex-col items-center w-full max-w-[1200px]" id="3d-section">
+<!-- 3D Bar Chart Container -->
+<div class="w-full h-[380px] md:h-[600px] glass-panel rounded-[24px] overflow-hidden relative shadow-lg border border-outline-variant/30" id="3d-chart-container">
+<div class="absolute top-0 left-0 right-0 z-20 p-md md:p-lg pointer-events-none bg-gradient-to-b from-black/70 via-black/20 to-transparent">
+<h3 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-white font-extrabold tracking-tight" style="text-shadow: 0 0 24px rgba(100,181,246,0.7), 0 2px 10px rgba(0,0,0,0.9);">Constelación de Opiniones</h3>
+</div>
+<div class="w-full h-full bg-[#05101a] relative">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_SCATTER" style="width:100%;height:100%; position:absolute; inset:0;"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_SCATTER');
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  const colors = [0x1976d2, 0x64b5f6, 0x0d47a1, 0x00bcd4, 0x2196f3];
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0xffffff, 1);
+  pointLight.position.set(10, 10, 10);
+  scene.add(pointLight);
+
+  const pointsGroup = new THREE.Group();
+  const count = 60;
+  const geometry = new THREE.SphereGeometry(0.12, 16, 16);
+
+  for (let i = 0; i < count; i++) {
+    const material = new THREE.MeshPhongMaterial({
+      color: colors[Math.floor(Math.random() * colors.length)],
+      shininess: 100,
+      emissive: colors[Math.floor(Math.random() * colors.length)],
+      emissiveIntensity: 0.2
+    });
+    const sphere = new THREE.Mesh(geometry, material);
+
+    sphere.position.x = (Math.random() - 0.5) * 10;
+    sphere.position.y = (Math.random() - 0.5) * 10;
+    sphere.position.z = (Math.random() - 0.5) * 10;
+
+    sphere.userData = {
+      velocity: new THREE.Vector3(
+        (Math.random() - 0.5) * 0.015,
+        (Math.random() - 0.5) * 0.015,
+        (Math.random() - 0.5) * 0.015
+      )
+    };
+
+    pointsGroup.add(sphere);
+  }
+  scene.add(pointsGroup);
+
+  const coreGeometry = new THREE.IcosahedronGeometry(0.8, 2);
+  const coreMaterial = new THREE.MeshPhongMaterial({
+    color: 0x1976d2,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.6
+  });
+  const core = new THREE.Mesh(coreGeometry, coreMaterial);
+  scene.add(core);
+
+  const gridHelper = new THREE.GridHelper(12, 12, 0x1976d2, 0x333333);
+  gridHelper.position.y = -5;
+  scene.add(gridHelper);
+
+  camera.position.z = 12;
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    pointsGroup.rotation.y += 0.0015;
+    pointsGroup.rotation.x += 0.0008;
+    core.rotation.y -= 0.003;
+
+    pointsGroup.children.forEach(p => {
+      p.position.add(p.userData.velocity);
+
+      if (Math.abs(p.position.x) > 5) p.userData.velocity.x *= -1;
+      if (Math.abs(p.position.y) > 5) p.userData.velocity.y *= -1;
+      if (Math.abs(p.position.z) > 5) p.userData.velocity.z *= -1;
+    });
+
+    renderer.render(scene, camera);
+  }
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+
+  animate();
+})();
+</script>
+</div>
+</div>
+</div>
+
+<!-- Results Container (Hidden initially) -->
+<div class="w-full max-w-2xl hidden z-10" id="results-container">
+<div class="glass-panel rounded-[24px] p-xl text-center mb-md mt-md">
+<span class="material-symbols-outlined text-[80px] text-secondary-container mb-md" style="font-variation-settings: &quot;FILL&quot; 1;">travel_explore</span>
+<h2 class="font-display-lg text-display-lg mb-sm text-on-surface font-extrabold">¡Listo!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl">Tus 3 respuestas ya son parte del cubo. Gira la esfera de arriba y busca tus puntos junto a otras opiniones parecidas.</p>
+</div>
+</div>
+
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface/90 backdrop-blur-md dark:bg-surface-dim/90 fixed bottom-0 left-0 w-full flex justify-around items-center py-3 px-4 z-50 border-t border-outline-variant/30 flat no shadows">
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 active:scale-90 duration-200 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">sports_soccer</span>
+<span class="font-label-bold text-label-bold text-[11px] mt-1">Cubo</span>
+</button>
+</nav>
+<script>
+        let currentQuestion = 1;
+        const totalQuestions = 3;
+        let selectedSport = null;
+        const answers = ["", "", ""];
+
+        // Reemplaza las 5 preguntas de trivia del template original por
+        // las 3 preguntas reales de opinión del proyecto.
+        const questions = [
+            { q: "¿Qué es lo que más te apasiona de tu deporte favorito?" },
+            { q: "Si pudieras cambiar una regla de tu deporte favorito, ¿cuál sería y por qué?" },
+            { q: "¿Qué le dirías a alguien que piensa que tu deporte favorito no sirve para nada?" }
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateUI();
+            setupSportSelector();
+        });
+
+        function setupSportSelector() {
+            const grid = document.getElementById('sport-grid');
+            const otherWrap = document.getElementById('other-sport-wrap');
+            const otherInput = document.getElementById('other-sport-input');
+            const quiz = document.getElementById('quiz-container');
+            const lockHint = document.getElementById('lock-hint');
+
+            function refreshLockState() {
+                const locked = !selectedSport;
+                quiz.classList.toggle('is-locked', locked);
+                lockHint.classList.toggle('hidden', !locked);
+            }
+
+            grid.querySelectorAll('.sport-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    grid.querySelectorAll('.sport-chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+                    chip.setAttribute('aria-pressed', 'true');
+
+                    const sport = chip.dataset.sport;
+                    if (sport === 'Otro') {
+                        otherWrap.classList.remove('hidden');
+                        otherInput.focus();
+                        selectedSport = otherInput.value.trim() || null;
+                    } else {
+                        otherWrap.classList.add('hidden');
+                        selectedSport = sport;
+                    }
+                    refreshLockState();
+                });
+            });
+
+            otherInput.addEventListener('input', () => {
+                selectedSport = otherInput.value.trim() || null;
+                refreshLockState();
+            });
+        }
+
+        function updateUI() {
+            document.getElementById('current-q-num').textContent = currentQuestion;
+            document.getElementById('progress-bar').style.width = `${(currentQuestion / totalQuestions) * 100}%`;
+            document.getElementById('question-text').textContent = questions[currentQuestion - 1].q;
+            document.getElementById('answer-input').value = answers[currentQuestion - 1];
+
+            const btnAtras = document.getElementById('btn-atras');
+            const btnSiguiente = document.getElementById('btn-siguiente');
+
+            btnAtras.disabled = currentQuestion === 1;
+
+            if (currentQuestion === totalQuestions) {
+                btnSiguiente.innerHTML = 'Terminar <span class="material-symbols-outlined align-middle ml-1 text-sm">done_all</span>';
+            } else {
+                btnSiguiente.textContent = 'Siguiente';
+            }
+
+            const qArea = document.getElementById('question-area');
+            qArea.classList.remove('slide-in');
+            void qArea.offsetWidth;
+            qArea.classList.add('slide-in');
+        }
+
+        function nextQuestionAction() {
+            answers[currentQuestion - 1] = document.getElementById('answer-input').value;
+
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                updateUI();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevQuestion() {
+            answers[currentQuestion - 1] = document.getElementById('answer-input').value;
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                updateUI();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('sport-selector').classList.add('hidden');
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('results-container').classList.remove('hidden');
+            document.getElementById('results-container').classList.add('slide-in');
+        }
+    </script>
+</body></html>
