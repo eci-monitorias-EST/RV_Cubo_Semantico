@@ -4,14 +4,20 @@ Expone el mismo pipeline que usa app.py (embeddings, PCA congelado,
 KMeans congelado, SQLite) para que el frontend WebXR pueda pedir los
 puntos y enviar respuestas nuevas. Nunca reentrena nada.
 
+Si existe la carpeta frontend-dist (generada con `npm run build`), la
+API también entrega la escena VR, para publicar todo con un solo servidor.
+
 Corre con: uvicorn api:app --reload --port 8000
 """
 from __future__ import annotations
 
+import os
 import uuid
+from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from pipeline import storage
@@ -24,6 +30,7 @@ from pipeline.visual_encoding import get_color_for_cluster, get_shape_for_pregun
 
 MIN_ANSWER_LENGTH = 10
 MAX_ANSWER_LENGTH = 500
+FRONTEND_DIST = Path(os.environ.get("FRONTEND_DIST", Path(__file__).resolve().parent.parent / "frontend-dist"))
 
 app = FastAPI(title="Cubo Semántico VR")
 
@@ -113,3 +120,7 @@ def crear_visita(visita: VisitaIn) -> dict:
 
     nuevos = [p for p in puntos() if p["visita_id"] == visita_id]
     return {"visita_id": visita_id, "puntos": nuevos}
+
+
+if FRONTEND_DIST.is_dir():
+    app.mount("/", StaticFiles(directory=FRONTEND_DIST, html=True), name="frontend")

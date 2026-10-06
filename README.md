@@ -11,37 +11,55 @@ frontend-vr/   Escena WebXR (Three.js + Vite) para navegador y Meta Quest
 
 ## Cómo correrlo
 
-Se necesitan dos terminales.
+Requisitos: Python 3.11+, Node.js LTS y Git. En PowerShell, permitir scripts una sola vez:
 
-**Terminal 1 — backend (API)**
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
 
-```bash
+**Primera vez (instala todo):**
+
+```powershell
+.\instalar.ps1
+```
+
+**Cada vez que se quiera usar:**
+
+```powershell
+.\iniciar.ps1
+```
+
+Se abren dos ventanas: la API (puerto 8000) y el frontend (puerto 5173). Para apagar, cerrar ambas ventanas.
+
+Abrir `https://localhost:5173` en el navegador. El navegador avisa que el certificado no es seguro (es autofirmado para desarrollo): "Configuración avanzada" → "Continuar". La primera respuesta enviada tarda más porque descarga el modelo de embeddings (~470 MB).
+
+### Arranque manual (alternativa)
+
+Terminal 1:
+
+```powershell
 cd backend
-python -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements.txt
 uvicorn api:app --reload --port 8000
 ```
 
-La primera vez descarga el modelo de embeddings (~470 MB), así que tarda un poco.
+Terminal 2:
 
-**Terminal 2 — frontend VR**
-
-```bash
+```powershell
 cd frontend-vr
-npm install
 npm run dev
 ```
 
-Abrir `https://localhost:5173` en el navegador. El navegador avisa que el certificado no es seguro (es autofirmado para desarrollo): "Configuración avanzada" → "Continuar".
-
 ### Probar en Meta Quest
 
-1. PC y gafas en la misma red Wi-Fi.
-2. `npm run dev` muestra una dirección `Network: https://192.168.x.x:5173`.
-3. Abrir esa dirección en el navegador de las Quest, aceptar el certificado y pulsar **ENTER VR**.
+1. PC y gafas en la misma red Wi-Fi. Si la red de la universidad no deja conectar dispositivos entre sí, usar el hotspot de un celular para ambos.
+2. La ventana de Vite muestra una dirección `Network: https://192.168.x.x:5173`.
+3. En las gafas, abrir el **Navegador** de Meta Quest, ir a esa dirección, aceptar el certificado y pulsar **ENTER VR**.
+4. Si no carga, revisar que el Firewall de Windows permita Node.js en redes privadas y públicas.
 
-Controles en VR: apuntar con el rayo a un punto y presionar el gatillo para leer la opinión; el joystick derecho (izquierda/derecha) gira el cubo.
+Para probar sin gafas: extensión **Immersive Web Emulator** (Chrome/Edge), activarla para `localhost` y recargar.
+
+Controles en VR: apuntar con el rayo a un punto muestra su opinión; el gatillo la deja fija; el joystick derecho (izquierda/derecha) gira el cubo. Las respuestas se envían desde el formulario antes de entrar a VR.
 
 ## API
 
