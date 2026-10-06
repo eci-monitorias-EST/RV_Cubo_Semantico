@@ -9,12 +9,15 @@ const DATA_SCALE = CUBE_HALF / DATA_BOUND;
 const CUBE_CENTER = new THREE.Vector3(0, 1.3, -1.4);
 const POINT_RADIUS = 0.028;
 const HIGHLIGHT_SCALE = 1.9;
+const HIT_RADIUS = 0.06;
 
 const GEOMETRIES = {
   circle: new THREE.SphereGeometry(POINT_RADIUS, 20, 14),
   square: new THREE.BoxGeometry(POINT_RADIUS * 1.6, POINT_RADIUS * 1.6, POINT_RADIUS * 1.6),
   diamond: new THREE.OctahedronGeometry(POINT_RADIUS * 1.25),
 };
+const HIT_GEOMETRY = new THREE.SphereGeometry(HIT_RADIUS, 8, 6);
+const HIT_MATERIAL = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false });
 
 export function createCubeScene(container) {
   const scene = new THREE.Scene();
@@ -58,13 +61,14 @@ export function createCubeScene(container) {
   cube.add(pointsGroup);
 
   const infoPanel = createInfoPanel();
-  infoPanel.mesh.position.copy(CUBE_CENTER).add(new THREE.Vector3(CUBE_HALF + 0.6, 0.15, 0.35));
+  infoPanel.mesh.position.copy(CUBE_CENTER).add(new THREE.Vector3(CUBE_HALF + 0.75, 0.1, 0.25));
   scene.add(infoPanel.mesh);
 
   const meshesById = new Map();
   let highlightedVisita = null;
   let selectedMesh = null;
   let hoveredMesh = null;
+  let shownMesh;
 
   function upsertPoints(points) {
     for (const p of points) {
@@ -75,6 +79,9 @@ export function createCubeScene(container) {
       mesh.position.set(p.x * DATA_SCALE, p.y * DATA_SCALE, p.z * DATA_SCALE);
       mesh.userData = { point: p, baseScale: 1, appear: 0 };
       mesh.scale.setScalar(0.001);
+      const hitArea = new THREE.Mesh(HIT_GEOMETRY, HIT_MATERIAL);
+      hitArea.userData.owner = mesh;
+      mesh.add(hitArea);
       pointsGroup.add(mesh);
       meshesById.set(p.id, mesh);
     }
@@ -99,7 +106,21 @@ export function createCubeScene(container) {
 
   function select(mesh) {
     selectedMesh = mesh;
-    infoPanel.show(mesh ? mesh.userData.point : null);
+  }
+
+  function updatePanel() {
+    const target = hoveredMesh ?? selectedMesh;
+    if (target === shownMesh) return;
+    shownMesh = target;
+    infoPanel.show(target ? target.userData.point : null);
+  }
+
+  function firstPoint(hits) {
+    for (const h of hits) {
+      const owner = h.object.userData.owner ?? h.object;
+      if (owner.userData.point) return owner;
+    }
+    return null;
   }
 
   const raycaster = new THREE.Raycaster();
@@ -129,8 +150,7 @@ export function createCubeScene(container) {
     tempMatrix.identity().extractRotation(controller.matrixWorld);
     raycaster.ray.origin.setFromMatrixPosition(controller.matrixWorld);
     raycaster.ray.direction.set(0, 0, -1).applyMatrix4(tempMatrix);
-    const hits = raycaster.intersectObjects(pointsGroup.children, false);
-    return hits.length ? hits[0].object : null;
+    return firstPoint(raycaster.intersectObjects(pointsGroup.children, true));
   }
 
   function updateHover() {
@@ -144,10 +164,10 @@ export function createCubeScene(container) {
       }
     } else if (pointerInside) {
       raycaster.setFromCamera(pointer, camera);
-      const hits = raycaster.intersectObjects(pointsGroup.children, false);
-      hit = hits.length ? hits[0].object : null;
+      hit = firstPoint(raycaster.intersectObjects(pointsGroup.children, true));
     }
     hoveredMesh = hit;
+    updatePanel();
     renderer.domElement.style.cursor = hit && !renderer.xr.isPresenting ? 'pointer' : 'default';
   }
 
@@ -244,7 +264,7 @@ function createInfoPanel() {
   texture.colorSpace = THREE.SRGBColorSpace;
 
   const mesh = new THREE.Mesh(
-    new THREE.PlaneGeometry(0.9, 0.9 * (canvas.height / canvas.width)),
+    new THREE.PlaneGeometry(1.05, 1.05 * (canvas.height / canvas.width)),
     new THREE.MeshBasicMaterial({ map: texture, transparent: true }),
   );
 
@@ -305,16 +325,16 @@ function createInfoPanel() {
     ctx.fill();
 
     ctx.fillStyle = '#1c1b1b';
-    ctx.font = '700 40px system-ui, sans-serif';
+    ctx.font = '700 46px system-ui, sans-serif';
     ctx.fillText(point.deporte, 96, 48);
 
     ctx.fillStyle = '#5d6470';
-    ctx.font = '500 28px system-ui, sans-serif';
-    let y = wrap(`P${point.pregunta_id}. ${point.pregunta}`, 48, 112, canvas.width - 96, 36, 2);
+    ctx.font = '500 30px system-ui, sans-serif';
+    let y = wrap(`P${point.pregunta_id}. ${point.pregunta}`, 48, 112, canvas.width - 96, 38, 2);
 
     ctx.fillStyle = '#1c1b1b';
-    ctx.font = '400 34px system-ui, sans-serif';
-    wrap(`“${point.texto}”`, 48, y + 14, canvas.width - 96, 44, 5);
+    ctx.font = '400 38px system-ui, sans-serif';
+    wrap(`“${point.texto}”`, 48, y + 14, canvas.width - 96, 48, 4);
 
     texture.needsUpdate = true;
   }
